@@ -189,10 +189,10 @@ print()
 
 # Loop Control Statements
 
-while True:
-    name = input("Name: ")
-    if name != "":
-        break
+# while True:
+#     name = input("Name: ")
+#     if name != "":
+#         break
 
 phone_number = "91-90232434"
 for i in phone_number:
@@ -206,3 +206,156 @@ for i in range(1,6):
         pass
     else:
         print(i, end=" ")
+print("\n")
+
+
+# Lists
+foods = ["Pizza", "Biriyani", "Dosa"]
+print(foods)
+
+for i in foods:
+    print(f"{i} ", end="")
+print()
+
+print(foods[1])
+foods[1] = "Maggie"
+print(foods[1])
+
+foods.append("Idly")
+foods.remove("Dosa")
+foods.pop()
+foods.insert(0,"Cake")
+foods.sort()
+foods.clear()
+
+
+# 2D Lists
+drinks = ["Coffee", "Tea"]
+dinner = ["Pizza", "Biriyani"]
+dessert = ["Cake", "Ice Cream"]
+food = [drinks, dinner, dessert]
+print(food)
+print(food[0][1])
+print()
+
+
+# Tuples -> Ordered & Unchangeable, Group Related Data
+student = ("Yash", 21, "Male")
+print(student.count("Yash"))
+print(student.index(21))
+print()
+
+
+# Set -> Un-Ordered, Un-Indexed, No Duplicate Values
+utensils = {"spoon", "knife", "Fork"}
+dishes = {"Bowl", "Plate", "Cup"}
+
+utensils.add("Towel")
+utensils.remove("Towel")
+# utensils.clear()
+
+utensils.update(dishes)
+for i in utensils:
+    print(i, end=" ")
+print()
+
+dining_table = utensils.union(dishes)
+print(dining_table)
+
+
+# Dictionary -> Changeable, Un-Ordered Collection of Unique Key:Value pairs.
+capitals = {"USA":"Washington DC", "India":"Delhi"}
+print(capitals.get("India"))
+print(capitals.keys())
+print(capitals.values())
+print(capitals.items())
+for key,value in capitals.items():
+    print(key, value)
+
+capitals.update({"Germany":"Berlin"})
+capitals.update({"USA":"Las Vegas"})
+print(capitals.items())
+capitals.pop("Germany")
+capitals.clear()
+print()
+
+
+# Indexing Operator
+name = "yashvanth"
+if (name[0].islower()):
+    name.capitalize()
+print(name)
+print()
+
+
+# Functions
+def hello(name, age): # -> Parameters
+    print(f"Hello {name}, Age: {age}")
+name = "Yash"
+age = 22
+hello(name, age) # -> Arguements
+print()
+
+
+# Return Statement
+def multiply(num1, num2):
+    result = num1 * num2
+    return result
+
+val = multiply(2,3)
+print(val)
+print()
+
+
+# Keyword arguements
+def hello(first, middle, last):
+    print(f"Hello {first}{middle} {last}")
+hello(middle="vanth",first="Yash",last="T V")
+print()
+
+
+# Variable Scope
+# LEGB -> Local, Enclosing, Global, Buil-In
+
+
+# *args -> Packs all arguements into a tuple, used for varying number of parameters
+def args(*args):
+    return args
+
+print(args(1,2,3,4,5))
+
+
+# **kwargs ->  Packs all arguements into a dictionary, used for varying number of keyword arguements
+def hello(**kwargs):
+    print(f"{kwargs["first"]}{kwargs["last"]}")
+hello(last="vanth", first="Yash")
+print()
+
+
+# str.format()
+animal = "cow"
+item = "moon"
+print("The {} jumped over the {}".format(animal, item)) 
+print("The {1} jumped over the {0}".format(animal, item)) #positional argument
+print("The {item} jumped over the {animal}".format(animal="cow", item="moon")) #positional argument
+print("The {item} jumped over the {animal}".format(animal="cow", item="moon")) #positional argument
+num = 3.1435235
+print("{:.2f}".format(num))
+print()
+
+
+# Exception Handling
+try:
+    num1 = 10
+    num2 = 0
+    res = num1/num2
+except ZeroDivisionError as e:
+    print(e)
+except Exception as e:
+    print(e)
+else:
+    print(res)
+finally:
+    print("This will always execute")
+print()
+
