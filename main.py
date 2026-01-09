@@ -359,3 +359,139 @@ finally:
     print("This will always execute")
 print()
 
+
+# Modules -> File containing code.
+# import modulename
+# import modulename as alias
+# from modulename import code1, code2
+# from modulename import *
+
+
+# POOP
+
+class Car:
+
+    wheels = 4 # class variables -> Within class outside constructor, shared for all objects
+
+    # self -> object that is using this method
+
+    # Constructor
+    def __init__(self, make, model):
+        self.make = make #instance variable, unique for each object
+        self.model = model #instance variable, unique for each object
+
+    def drive(self):
+        print(f"{self.model} is driving")
+    def stop(self):
+        print(f"{self.model} is stopping")
+
+car1 = Car("Chevy", "Corvette")
+print(car1.make, car1.model)
+car1.drive()
+car1.stop()
+
+
+# Inheritance
+class Animal:
+
+    alive = True
+    
+    def eat(self):
+        print("The animal is eating")
+
+    def sleep(self):
+        print("Animal is sleeping")
+
+class Rabbit(Animal):
+    def run(self):
+        print("Rabbit is running")
+class Fish(Animal):
+    def swim(self):
+        print("Fish is swimming")
+
+rabbit = Rabbit()
+fish = Fish()
+
+rabbit.eat()
+rabbit.run()
+
+fish.sleep()
+fish.swim()
+
+
+# Multi Level Inheritance -> Child class inherits another child class
+class Organism:
+    alive = True
+
+class Animal(Organism):
+    def eat(self):
+        print("Animal is eating")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog is barking")
+
+dog = Dog()
+print(dog.alive)
+dog.eat()
+dog.bark()
+
+
+# Multiple Inheritance -> Child Class derived from more than one parent class
+
+class Prey:
+    def flee(self):
+        print("Animal flees")
+    
+class Predator:
+    def hunt(self):
+        print("Animal hunts")
+
+class Deer(Prey):
+    pass
+
+class Lion(Predator):
+    pass
+
+class Fish(Prey, Predator):
+    pass
+
+deer = Deer()
+lion = Lion()
+fish = Fish()
+
+deer.flee()
+lion.hunt()
+
+fish.flee()
+fish.hunt()
+print()
+
+
+# Method Overriding
+class Male:
+    def greet(self):
+        print("Hi")
+
+class Female(Male):
+    def greet(self):
+        print("Hey")
+
+female = Female()
+female.greet()
+
+
+# super keyword
+class Rectangle:
+    def __init__(self, l, w):
+        self.l = l
+        self.w = w
+
+class Square:
+    def __init__(self, l, w):
+        super().__init__(l,w)
+
+class  Cube:
+    def __init__(self, l, w, h):
+        super().__init__(l,w)
+        self.h = h
