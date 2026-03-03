@@ -1,0 +1,23 @@
+Python is dynamically typed.
+
+That means:
+You do not declare types
+Python decides the type automatically
+
+Convention:
+Use snake_case
+
+Basic Data Types:
+int
+float
+str (Ordered sequences of characters)
+boolean (True/False)
+None (Represents “no value”)
+
+type(var)
+
+Type Casting:
+x = "10"
+y = int(x)
+
+Variables are references.

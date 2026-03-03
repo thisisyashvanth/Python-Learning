@@ -1,0 +1,14 @@
+my_app/
+│
+├── main.py
+└── utils/
+    ├── __init__.py
+    ├── math_utils.py
+    └── string_utils.py
+
+utils is a package
+math_utils.py is a module
+
+__init__.py:
+Marks directory as a package (mandatory pre-Python 3.3, still standard practice)
+Controls what gets exposed on import

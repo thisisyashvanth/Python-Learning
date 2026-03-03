@@ -1,0 +1,23 @@
+A virtual environment is an isolated folder that contains:
+    Its own Python interpreter
+    Its own installed libraries (packages)
+    Its own dependency versions
+
+Basically, “A private Python setup for one project.”
+
+The core problem: Dependency Conflict
+All Python packages are installed globally by default.
+
+Virtual Environments solve these by providing each project with:
+Its own dependencies
+Its own versions
+No conflicts
+
+How to Create:
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+deactivate
+
+Notes:
+Must add to .gitignore

@@ -1,0 +1,17 @@
+A class is a blueprint for creating objects.
+Class → Blueprint
+Object → Actual thing made from the blueprint
+
+Classes help:
+Group data (attributes) + behavior (methods) together
+Write reusable, organized programs
+Avoid repeating logic
+
+Class Variables vs Instance Variables
+Instance variable (belongs to object, each object has its own copy.)
+Ex: self.name, self.age
+
+Class variable (shared by all objects)
+Ex: 
+class Person:
+    species = "Human"
